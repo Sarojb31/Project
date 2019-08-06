@@ -13,7 +13,14 @@ class CategoriesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('category', function (Blueprint $table) {
+            $table->bigIncrements('id')->unsigned();
+            $table->string('category_title');
+            $table->text('category_summary');
+            $table->text('category_image');
+
+            $table->timestamps();
+    });
     }
 
     /**
@@ -23,6 +30,6 @@ class CategoriesTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('category');
     }
 }
