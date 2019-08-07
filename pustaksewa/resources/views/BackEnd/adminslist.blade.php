@@ -1,0 +1,1 @@
+adminslist.blade.php

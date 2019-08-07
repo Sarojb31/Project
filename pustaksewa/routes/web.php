@@ -21,12 +21,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix'=>'admin','middleware'=>'auth','as'=>'admin.'],function(){
-	Route::get('/','BackendController@showDashboard')->middleware('auth');
-
-
-
-
-
+	Route::get('/','BackendController@showDashboard')/*->middleware('auth')*/;
+	
+	Route::get('/admins','UserController@showadminslist')->name('admins');
+	Route::get('/user','UserController@showUserlist')->name('user');
+	Route::get('/user/add','UserController@addUser')->name('user.add');
+	
+	Route::get('/product','ProductController@showProductlist')->name('product');
+	Route::get('/product/add','ProductController@addProduct')->name('product.add');
+	
+	Route::get('/category','CategoryController@showCategorylist')->name('category');
+	Route::get('/category/add','CategoryController@addCategory')->name('category.add');
 
 });
 
