@@ -2,19 +2,94 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use App\Category;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+
 
 class CategoryController extends Controller
 {
    	/* Category*/
 	public function showCategorylist(){
-		return view('BackEnd.categorylist');
+		$data['category']= Category::all() ;
+		// $data['category'] = Category::with('user', 'getParentNameById')->get();
+		return view('BackEnd.category.list', $data);
 	}
-	public function addCategory(){
-		return view('BackEnd.categoryadd');
+
+	public function showCategoryForm()
+    {
+        $data['category']= Category::all();
+        return view('BackEnd.category.category_form',$data);
+    }
+	public function addCategory(Request $request){
+
+		 $request->validate([
+            'category_title' => 'required|max:255',
+            'category_summary' => 'required',
+            'category_image' => 'required|mimes:jpg,png,jpeg',
+        ]);
+
+		 $category = new Category();
+        $category->category_title = $request->title;
+        $category->category_summary = $request->summary;
+        $category->added_by = \Auth::user()->id;
+         if (($request->category_image != null)) {
+            $path = $request->file('category_image')->store('category', 'public');
+        }
+        $category->category_image = $path;
+        $category->created_at = date('Y-m-d H:i:s');
+        $category->save();
+        return redirect()->route('admin.category',$category);
 	}
-	public function deleteCategory(){
-		return view('BackEnd.categorylist');
+
+		// update Category
+
+    public function getEditCategory($id){
+        $data['category'] = Category::find($id);
+        
+        return view('BackEnd.category.edit_category',$data);
+    }
+
+    public function postEditCategory(Request $request){
+
+//        dd($request->all());
+
+        $request->validate([
+            'title' => 'required|max:255',
+            'summary' => 'required',
+            'category_image' => 'nullable|mimes:jpg,png,jpeg',
+            'category_id' => 'required|integer',
+        ]);
+//        dd($request->all());
+//        dd('validated');
+
+        $category =  Category::find($request->category_id);
+		$category->category_title = $request->title;
+        $category->category_summary = $request->summary;
+
+        if (($request->category_image != null)) {
+            Storage::delete('public/'.$category->category_image);
+            $path = $request->file('category_image')->store('category', 'public');
+            $category->category_image = $path;
+        }
+
+        $category->updated_at = date('Y-m-d H:i:s');
+        $category->save();
+
+        \Session::flash('success','Category Edited Successfully');
+        return redirect()->route('admin.category');
+    }
+	public function deleteCategory(Request $request){
+
+		$category = Category::find($request->id);
+		
+        //check if it is parent
+       
+
+        Storage::delete('public/'.$category->category_image);
+        $category->delete();
+        \Session::flash('success', 'Category Deleted Successfully');
+
+        return redirect()->route('admin.category');
 	}
 }

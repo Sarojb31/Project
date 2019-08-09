@@ -31,7 +31,14 @@ Route::group(['prefix'=>'admin','middleware'=>'auth','as'=>'admin.'],function(){
 	Route::get('/product/add','ProductController@addProduct')->name('product.add');
 	
 	Route::get('/category','CategoryController@showCategorylist')->name('category');
-	Route::get('/category/add','CategoryController@addCategory')->name('category.add');
+	Route::get('/category/add','CategoryController@showCategoryForm')->name('add.categoryform');
+	Route::post('/category/add','CategoryController@addCategory')->name('category.add');
+
+	Route::get('/edit/{id}',  'CategoryController@getEditCategory')->name('edit-category');
+    Route::post('/edit',  'CategoryController@postEditCategory')->name('store-category');
+
+    Route::get('/delete/{id}','CategoryController@deleteCategory')->name('delete-category');
+
 
 });
 

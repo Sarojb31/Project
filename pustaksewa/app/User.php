@@ -39,21 +39,21 @@ class User extends Authenticatable
 
     public function category()
     {
-        return $this->hasMany('App\categories_table');
+        return $this->hasMany('App\Category');
     }
 
     public function order()
     {
-        return $this->hasMany('App\orders_table');
+        return $this->hasMany('App\Order');
     }
 
      public function donation()
     {
-        return $this->hasMany('App\donation_table');
+        return $this->hasMany('App\Donation');
     }
 
     public function product()
     {
-        return $this->hasMany('App/product_table');
+        return $this->hasMany('App/Products');
     }
 }

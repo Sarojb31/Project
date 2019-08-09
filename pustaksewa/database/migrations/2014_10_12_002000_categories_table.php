@@ -13,11 +13,12 @@ class CategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('category_title');
             $table->text('category_summary');
             $table->text('category_image');
+            $table->string('added_by');
 
             $table->timestamps();
     });
