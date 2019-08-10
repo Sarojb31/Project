@@ -27,18 +27,27 @@ Route::group(['prefix'=>'admin','middleware'=>'auth','as'=>'admin.'],function(){
 	Route::get('/user','UserController@showUserlist')->name('user');
 	Route::get('/user/add','UserController@addUser')->name('user.add');
 	
-	Route::get('/product','ProductController@showProductlist')->name('product');
-	Route::get('/product/add','ProductController@addProduct')->name('product.add');
+	/*=============================Product====================================*/
+
+		Route::get('/product','ProductController@showProductlist')->name('product');
+		Route::get('/product/add','ProductController@showProductForm')->name('product.add');
+		Route::post('/product/add','ProductController@addProduct')->name('product.add');
+		Route::get('/product/edit/{id}','ProductController@getEditProduct')->name('edit-product');
+	    Route::post('/product/edit','ProductController@postEditProduct')->name('store-product');
+		Route::get('/product/delete/{id}','ProductController@deleteProduct')->name('delete-product');
+
+
+	/*=============================Category====================================*/
+
+
+		Route::get('/category','CategoryController@showCategorylist')->name('category');
+		Route::get('/category/add','CategoryController@showCategoryForm')->name('category.add');
+		Route::post('/category/add','CategoryController@addCategory')->name('category.add');
+		Route::get('/category/edit/{id}',  'CategoryController@getEditCategory')->name('edit-category');
+	    Route::post('/category/edit',  'CategoryController@postEditCategory')->name('store-category');
+	    Route::get('/category/delete/{id}','CategoryController@deleteCategory')->name('delete-category');
+
 	
-	Route::get('/category','CategoryController@showCategorylist')->name('category');
-	Route::get('/category/add','CategoryController@showCategoryForm')->name('add.categoryform');
-	Route::post('/category/add','CategoryController@addCategory')->name('category.add');
-
-	Route::get('/edit/{id}',  'CategoryController@getEditCategory')->name('edit-category');
-    Route::post('/edit',  'CategoryController@postEditCategory')->name('store-category');
-
-    Route::get('/delete/{id}','CategoryController@deleteCategory')->name('delete-category');
-
 
 });
 

@@ -6,13 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+protected $table = "products";
+
     public function category()
     {
-        return $this->belongsto('App\categories_table');
+
+        return $this->belongsto('App\Category');
     }
 
     public function user()
     {
-    	return $this->belongsto('App\User');
+    	return $this->belongsto('App\User','added_by','id');
     }
 }

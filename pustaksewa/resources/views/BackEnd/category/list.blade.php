@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('BackEnd.admin')
 
 @section('css')
     <link href="{{ asset('public/BackEnd_assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
 @endsection
 
 @section('button')
-    <a href="{{route('admin.category')}}" class="btn btn-primary"><i class="fa fa-plus"> Category Add</i></a>
+    <a href="{{route('admin.category.add')}}" class="btn btn-primary"><i class="fa fa-plus"> Category Add</i></a>
 
 @endsection
 

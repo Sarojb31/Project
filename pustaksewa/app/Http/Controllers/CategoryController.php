@@ -23,11 +23,11 @@ class CategoryController extends Controller
     }
 	public function addCategory(Request $request){
 
-		 $request->validate([
-            'category_title' => 'required|max:255',
-            'category_summary' => 'required',
-            'category_image' => 'required|mimes:jpg,png,jpeg',
-        ]);
+		 // $request->validate([
+   //          'category_title' => 'required|max:255',
+   //          'category_summary' => 'required',
+   //          'category_image' => 'required|mimes:jpg,png,jpeg',
+   //      ]);
 
 		 $category = new Category();
         $category->category_title = $request->title;
@@ -83,7 +83,7 @@ class CategoryController extends Controller
 
 		$category = Category::find($request->id);
 		
-        //check if it is parent
+        
        
 
         Storage::delete('public/'.$category->category_image);
