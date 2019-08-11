@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+*/ 
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,35 +20,54 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['prefix'=>'admin','middleware'=>'auth','as'=>'admin.'],function(){
-	Route::get('/','BackendController@showDashboard')/*->middleware('auth')*/;
-	
-	Route::get('/admins','UserController@showadminslist')->name('admins');
-	Route::get('/user','UserController@showUserlist')->name('user');
-	Route::get('/user/add','UserController@addUser')->name('user.add');
+
+Route::prefix('admin')->group(function(){
+
+	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
+	Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
+	Route::get('/','AdminController@index')->name('admin.dashboard');
+
+
+	Route::get('/admins','AdminController@showadminslist')->name('admin.admins');
+	Route::get('/user','UserController@showUserlist')->name('admin.user');
+
+	Route::get('/user/add','UserController@getaddUser')->name('admin.user.register');
+	Route::post('/user/add','UserController@addUser')->name('admin.user.register');
+
+	Route::post('/user/delete/{id}','UserController@deleteUser')->name('admin.user.delete');
+	Route::get('/user/edit','UserController@editUser')->name('admin.user.edit');
 	
 	/*=============================Product====================================*/
 
-		Route::get('/product','ProductController@showProductlist')->name('product');
-		Route::get('/product/add','ProductController@showProductForm')->name('product.add');
-		Route::post('/product/add','ProductController@addProduct')->name('product.add');
-		Route::get('/product/edit/{id}','ProductController@getEditProduct')->name('edit-product');
-	    Route::post('/product/edit','ProductController@postEditProduct')->name('store-product');
-		Route::get('/product/delete/{id}','ProductController@deleteProduct')->name('delete-product');
+		Route::get('/product','ProductController@showProductlist')->name('admin.product');
+		Route::get('/product/add','ProductController@showProductForm')->name('admin.product.add');
+		Route::post('/product/add','ProductController@addProduct')->name('admin.product.add');
+		Route::get('/product/edit/{id}','ProductController@getEditProduct')->name('admin.edit-product');
+	    Route::post('/product/edit','ProductController@postEditProduct')->name('admin.store-product');
+		Route::get('/product/delete/{id}','ProductController@deleteProduct')->name('admin.delete-product');
 
 
 	/*=============================Category====================================*/
 
 
-		Route::get('/category','CategoryController@showCategorylist')->name('category');
-		Route::get('/category/add','CategoryController@showCategoryForm')->name('category.add');
-		Route::post('/category/add','CategoryController@addCategory')->name('category.add');
-		Route::get('/category/edit/{id}',  'CategoryController@getEditCategory')->name('edit-category');
-	    Route::post('/category/edit',  'CategoryController@postEditCategory')->name('store-category');
-	    Route::get('/category/delete/{id}','CategoryController@deleteCategory')->name('delete-category');
+		Route::get('/category','CategoryController@showCategorylist')->name('admin.category');
+		Route::get('/category/add','CategoryController@showCategoryForm')->name('admin.category.add');
+		Route::post('/category/add','CategoryController@addCategory')->name('admin.category.add');
+		Route::get('/category/edit/{id}',  'CategoryController@getEditCategory')->name('admin.edit-category');
+	    Route::post('/category/edit',  'CategoryController@postEditCategory')->name('admin.store-category');
+	    Route::get('/category/delete/{id}','CategoryController@deleteCategory')->name('admin.delete-category');
+
+
+
+
+
+
+});
+
 
 	
 
-});
+
 
 

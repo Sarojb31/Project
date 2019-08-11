@@ -11,3 +11,5 @@
     <script src="{{asset('public/BackEnd_assets/js/custom.min.js')}}"></script>
     <!--Style Switcher -->
     <script src="{{asset('public/BackEnd_assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
+    @yield('script')

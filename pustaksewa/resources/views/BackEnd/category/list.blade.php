@@ -50,7 +50,7 @@
                         </td>
                         <td>
                             <a  href="{{route('admin.edit-category',$value->id)}}" >Edit</a>
-                            ||<a  href="admin.delete-category"  class="" data-toggle="modal"  data-id="{{$value->id}}" data-title="{{$value->title}}">Delete</a>
+                            ||<a  href="#deleteUser"  class="" data-toggle="modal"  data-id="{{$value->id}}" data-title="{{$value->title}}">Delete</a>
                         </td>
                     </tr>
                 @endforeach
@@ -74,7 +74,7 @@
 
 
 
-        $('#deleteCategory').on('show.bs.modal', function (event) {
+        $('#deleteUser').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var id = button.data('id');
             var title = button.data('title');
@@ -82,8 +82,8 @@
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this)
-            modal.find('#category_id').val(id);
-            modal.find('.title').text(title);
+            modal.find('#id').val(id);
+            modal.find('.name').text(title);
         })
     </script>
 @endsection
