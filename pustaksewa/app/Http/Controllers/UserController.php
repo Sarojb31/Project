@@ -7,12 +7,15 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
 
     public function showUserlist(){
+
+          $users = DB::table('users')->paginate(5);
 
         $data['user'] = User::all();
 //        dd($user);
@@ -96,6 +99,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->address = $request->address;
+        $user->created_at = date('Y-m-d H:i:s');
 
         $user->contact_number = $request->contact;
         $user->password = Hash::make($request->password);

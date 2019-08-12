@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('page_title')
-    User Edit
+@section('title')
+User Edit
 @endsection
 
 @section('page_heading')

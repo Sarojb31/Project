@@ -1,5 +1,10 @@
 @extends('BackEnd.admin')
 
+@section('title')
+User List
+
+@endsection
+
 @section('css')
     <link href="{{ asset("public/assets/plugins/bower_components/datatables/jquery.dataTables.min.css") }}" rel="stylesheet" type="text/css" />
     <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -10,7 +15,12 @@
 @endsection
 
 @section('page_heading')
-    User List
+    <h3>User List</h3>
+@endsection
+
+@section('button')
+    <a href="{{route('admin.user.register')}}" class="btn btn-primary"><i class="fa fa-plus"> Add Users</i></a>
+
 @endsection
 
 @section('content')
@@ -60,10 +70,7 @@
                 @endforeach
                 </tbody>
             </table>
-         <div class="row">
-            <a href="{{route('admin.user.register')}}"><i class="fa fa-user" data-icon="v"></i><span class="hide-menu">Add User</span></a> 
-            </span></div>
-        </div>
+        
 
     </div>
     <div class="modal fade" id="deleteUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

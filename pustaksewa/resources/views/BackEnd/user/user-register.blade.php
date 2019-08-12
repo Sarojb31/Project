@@ -1,7 +1,8 @@
 @extends('BackEnd.admin')
 
-@section('page_title')
-    User Register
+@section('title')
+User Registration
+
 @endsection
 
 @section('css')

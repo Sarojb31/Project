@@ -8,16 +8,27 @@
                     
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-emoticon fa-fw"></i> <span class="hide-menu">User<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{route('admin.admins')}}"><i class="fa-fw">F</i><span class="hide-menu">Admin</span></a> </li>
-                            <li> <a href="{{route('admin.user')}}"><i class="fa-fw">T</i><span class="hide-menu">Users</span></a> </li>
+                            <li> <a href="{{route('admin.admins')}}"><span class="hide-menu">Admin</span></a> </li>
+                            <li> <a href="{{route('admin.user')}}"><span class="hide-menu">Users</span></a> </li>
                             
                         </ul>
                     </li>
-                    <li> <a href="{{route('admin.category')}}" class="waves-effect"><i class="mdi mdi-google-maps fa-fw"></i><span class="hide-menu">Category</span></a> </li>
-                    <li> <a href="{{route('admin.product')}}" class="waves-effect"><i class="mdi mdi-map-marker fa-fw"></i><span class="hide-menu">Products</span></a> </li>
+                    <li> <a href="{{route('admin.category')}}" class="waves-effect"><i class="fa fa-archive"></i><span class="hide-menu">Category</span></a> </li>
+                    <li> <a href="{{route('admin.product')}}" class="waves-effect"><i class="fa fa-book"></i><span class="hide-menu">Books</span></a> </li>
                     
                     
-                    <li><a href="login.html" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
+                    <li><a href="" class="waves-effect" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
+                    <form action="{{route('logout')}}" id="logout-form" method="POST">
+                            @csrf
+                                
+
+                        </form>
+
+
+                    
+                    </li>
+
+                        
                     <li class="devider"></li>
                     
                 </ul>

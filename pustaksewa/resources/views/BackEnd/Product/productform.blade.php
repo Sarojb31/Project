@@ -2,11 +2,11 @@
 
 
 @section('page_title')
-    Product Add
+    Books Add
 @endsection
 
 @section('page_heading')
-    Products Add
+    <h3>Add Books</h3>
 @endsection
 
 @section('css')

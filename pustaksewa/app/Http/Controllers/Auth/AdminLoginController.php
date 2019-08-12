@@ -85,6 +85,9 @@ class AdminLoginController extends Controller
         return back()->withErrors(['email' => 'Email or password are wrong.']);
 
     }
+    public function test(){
+        return('test');
+    }
 
         public function logout()
      {

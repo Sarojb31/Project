@@ -6,7 +6,7 @@
 @endsection
 
 @section('page_heading')
-    Category Edit
+    <h3>Category Edit</h3>
 @endsection
 
 @section('css')

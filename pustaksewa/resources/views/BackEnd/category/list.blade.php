@@ -5,12 +5,12 @@
     <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
 @endsection
 
-@section('page_title')
-    Category Listing
+@section('title')
+Category List
 @endsection
 
 @section('page_heading')
-    Category List
+    <h3>Category List</h3>
 @endsection
 
 @section('button')

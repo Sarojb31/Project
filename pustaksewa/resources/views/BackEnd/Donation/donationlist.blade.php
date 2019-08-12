@@ -29,7 +29,7 @@ Book List
                 <th>S.N.</th>
                 <th>Title</th>
                 <th>Summary</th>
-                <th>Added By</th>
+                <th>Donated By</th>
                 <th>Product Image</th>
                 <th>Action</th>
                 {{--</tr>--}}
@@ -49,11 +49,7 @@ Book List
                                 <img src="{{asset('public/storage/'.$value->product_image)}}" alt="" style="max-width: 100px;" class="img img-responsive">
                             @endif
                         </td>
-                        <td>
-                            <a  href="{{route('admin.edit-product',$value->id)}}" >Edit</a>
-                            ||<a  href="{{route('admin.delete-product',$value->id)}}"  class="" data-toggle="modal"  data-id="{{$value->id}}" data-title="{{$value->title}}">Delete</a>
-                        </td>
-                </tr>
+                        
                  @endforeach
             </tbody>
         </table>

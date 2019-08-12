@@ -2,11 +2,11 @@
 
 
 @section('page_title')
-    Category Edit
+    Books Edit
 @endsection
 
 @section('page_heading')
-    Category Edit
+   <h3>Books Edit</h3> 
 @endsection
 
 @section('css')

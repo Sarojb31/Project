@@ -19,12 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('admin/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('admin/login','Auth\AdminLoginController@login')->name('admin.login.submit');
 
-
-Route::prefix('admin')->group(function(){
-
-	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
-	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
+Route::group(['prefix'=>'admin','middleware' => ['auth:admin']], function () {
+    // routes...
+	
+	
 	Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
 	Route::get('/','AdminController@index')->name('admin.dashboard');
 
@@ -46,6 +47,12 @@ Route::prefix('admin')->group(function(){
 		Route::get('/product/edit/{id}','ProductController@getEditProduct')->name('admin.edit-product');
 	    Route::post('/product/edit','ProductController@postEditProduct')->name('admin.store-product');
 		Route::get('/product/delete/{id}','ProductController@deleteProduct')->name('admin.delete-product');
+
+		/*=============================Donation====================================*/
+		Route::get('/donation/add','ProductController@showProductForm')->name('admin.donation.add');
+		Route::post('/donation/add','ProductController@addProduct')->name('admin.donation.add');
+		Route::get('/donation','ProductController@showProductlist')->name('admin.donation');
+
 
 
 	/*=============================Category====================================*/
