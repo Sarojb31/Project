@@ -84,13 +84,10 @@ class CategoryController extends Controller
 	public function deleteCategory(Request $request){
 
 		$category = Category::find($request->id);
-		
-        
-       
-
+        // dd($category);
         Storage::delete('public/'.$category->category_image);
         $category->delete();
-        \Session::flash('success', 'Category Deleted Successfully');
+        \Session::flash('success','Category Deleted Successfully');
 
         return redirect()->route('admin.category');
 	}

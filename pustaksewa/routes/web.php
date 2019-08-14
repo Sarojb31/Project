@@ -55,7 +55,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth:admin']], function () {
 		Route::post('/product/add','ProductController@addProduct')->name('admin.product.add');
 		Route::get('/product/edit/{id}','ProductController@getEditProduct')->name('admin.edit-product');
 	    Route::post('/product/edit','ProductController@postEditProduct')->name('admin.store-product');
-		Route::get('/product/delete/{id}','ProductController@deleteProduct')->name('admin.delete-product');
+		Route::post('/product/delete/{id}','ProductController@deleteProduct')->name('admin.delete-product');
 
 		/*=============================Donation====================================*/
 		Route::get('/donation/add','ProductController@showProductForm')->name('admin.donation.add');
@@ -72,7 +72,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth:admin']], function () {
 		Route::post('/category/add','CategoryController@addCategory')->name('admin.category.add');
 		Route::get('/category/edit/{id}',  'CategoryController@getEditCategory')->name('admin.edit-category');
 	    Route::post('/category/edit',  'CategoryController@postEditCategory')->name('admin.store-category');
-	    Route::get('/category/delete/{id}','CategoryController@deleteCategory')->name('admin.delete-category');
+	    Route::post('/category/delete/{id}','CategoryController@deleteCategory')->name('admin.delete-category');
 
 
 
