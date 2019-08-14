@@ -41,7 +41,7 @@ Book List
                     <td>{{$loop->iteration}}</td>
                     <td>{{$value->product_name}}</td>
                     <td>{{$value->description}}</td>
-                    <td>{{$value->user->name}}</td>
+                    <td>{{$value->added_by}}</td>
                     <td>
                             @if($value->product_image == null)
                                 <img src="{{asset('public/image_upload/image_not_found.jpg')}}" alt="" style="max-width: 100px;" class="img img-responsive">
