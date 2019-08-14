@@ -1,12 +1,13 @@
 @extends('BackEnd.admin')
 
+
 @section('css')
     <link href="{{ asset('public/BackEnd_assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('title')
-Book List
+Donation List
 @endsection
 
 @section('page_heading')

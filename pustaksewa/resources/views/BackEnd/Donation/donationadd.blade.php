@@ -1,8 +1,8 @@
 @extends('BackEnd.admin')
 
 
-@section('page_title')
-    Books Add
+@section('title')
+    Add Donation
 @endsection
 
 @section('page_heading')

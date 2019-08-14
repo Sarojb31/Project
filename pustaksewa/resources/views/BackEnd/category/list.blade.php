@@ -1,4 +1,8 @@
 @extends('BackEnd.admin')
+@section('title')
+Category List
+@endsection
+
 
 @section('css')
     <link href="{{ asset('public/BackEnd_assets/plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />

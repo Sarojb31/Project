@@ -1,7 +1,7 @@
 @extends('BackEnd.admin')
 
 
-@section('page_title')
+@section('title')
     Category Add
 @endsection
 

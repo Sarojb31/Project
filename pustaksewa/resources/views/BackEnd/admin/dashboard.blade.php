@@ -1,4 +1,7 @@
 @extends('BackEnd.admin')
+@section('title')
+Admin Dashboard
+@endsection
 
 
 @section('content')

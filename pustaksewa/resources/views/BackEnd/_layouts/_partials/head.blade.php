@@ -12,6 +12,8 @@
     <link href="{{asset('public/BackEnd_assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
     <!-- animation CSS -->
     <link href="{{asset('public/BackEnd_assets/css/animate.css')}}" rel="stylesheet">
+    <!-----FOnta aawesome------->
+    <link rel="stylesheet" href="{{asset('public/FrontEnd_asset/asset/css/all.css')}}">
     <!-- Custom CSS -->
     <link href="{{asset('public/BackEnd_assets/css/style.css')}}" rel="stylesheet">
     <!-- color CSS -->

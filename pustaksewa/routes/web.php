@@ -10,14 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */ 
-
+/*==================================FrontEnd Routes COllection==========================*/ 
 Route::get('/', function () {
-    return view('welcome');
+    return view('FrontEnd.index');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/', 'HomeController@index')->name('home');
+	Route::get('/shop', 'HomeController@shop')->name('shop');
+	Route::get('/about', 'HomeController@about')->name('about');
+	Route::get('/contact', 'HomeController@contact')->name('contact');
+
+
+	Route::get('/cart', 'FrontController\CustomerController@cart')->name('cart');
+	Route::get('/product/{id}', 'FrontController\ProductController@singleproduct')->name('product');
+
+
+/*==================================Admin Routes COllection==========================*/ 
 
 Route::get('admin/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('admin/login','Auth\AdminLoginController@login')->name('admin.login.submit');

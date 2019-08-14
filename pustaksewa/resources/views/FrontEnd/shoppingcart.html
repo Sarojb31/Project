@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+  <link rel="stylesheet" href="asset/css/all.css">
+ 
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  .nav-bar-sec-prt{
+    justify-content: flex-end;
+    
+  }
+  </style>
+
+  <!-- Navbar CSS Starts Here -->
+<style type="text/css">
+      /*Margin set for menu items using media  */
+      ul li{
+        
+        @media (min-width: 992px){
+        .navbar li {
+          margin-left : 1em;
+          margin-right : 1em;
+        }
+      }
+      }
+
+      /*---------Navbar onScroll CSS-----------*/
+      nav{
+      font-family: "Roboto", sans-serif;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      
+      transition: .5s;
+      z-index: 99;
+      background-color: rgba(255, 255, 255,1);
+
+      }
+      nav a{
+          
+        text-decoration: none;
+        margin-right: 20px;
+      }
+      nav a:hover{
+          
+          text-decoration: none;
+          color:rgb(101, 132, 62) !important;
+          font-weight: bold;
+
+      }
+      nav a.snava{
+          
+          text-decoration: none;
+          color:#BAB1AB !important;
+          
+      }
+
+      nav.snav{
+       
+      
+      background-color: rgb(101, 132, 62);
+      color:rgb(101, 132, 62) !important;
+
+      }
+     
+}
+</style>
+ <!-- --------------Footer CSS Starts Here ----------------->
+
+     
+      <style type="text/css">
+
+.footer-distributed{
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+
+  padding: 55px 50px;
+  margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 20px;
+}
+.footer-links li a{
+
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+.footer-distributed .footer-links a:hover{
+  color:rgb(101, 132, 62);
+}
+.footer-distributed .footer-company-name{
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  #5383d3;
+  text-decoration: none;;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+
+}
+
+/* footer ends here */
+</style>
+
+
+
+ <!-- --------------Footer CSS Ends Here ----------------->
+
+
+
+
+
+</head>
+<body>
+  <!-- Header Navigation-->
+<header >
+  <nav class="navbar navbar-expand-lg  fixed-top navbar-light">
+  <div class="container">
+      <a class="navbar-brand" href="#"><img id="logo" src="asset/images/PSL.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto w-100   justify-content-end">
+          <li class="nav-item active ">
+            <a class="nav-link" href="slider.html">HOME </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop1.html">SHOP</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CATEGORY
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Text Book</a>
+              <a class="dropdown-item" href="#">Novels</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Old Books</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="contactus.html">CONTACT US</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="aboutus.html">ABOUT US</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+
+  </nav>
+  </header>
+<!-- Header Navigation-->
+<hr>
+<!-- New Products-->
+<div class="container">
+  <div class="row text-center" style="height: 200px; padding: 30px 0; margin: 50px 0; ">
+    <div class="col-12 align-middle  h-100">
+        <h3 class="text-center">Pustak <span style="color:green">Product</span></h3>
+        <p class="text-center ">Your Donation Might be more than enough for Readers.<br>
+        	<h4><span style="color:green">PLEASE THINK ABOUT IT</span>!!!</h4></p>
+  </div>
+  </div>
+</div>
+<!-- New Product Text// -->
+
+<!-- Product Container -->
+
+<div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="p-2 px-3 text-uppercase">Product</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Price</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Quantity</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Remove</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="border-0">
+                    <div class="p-2">
+                      <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-1_zrifhn.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="border-0 align-middle"><strong>$79.00</strong></td>
+                  <td class="border-0 align-middle"><strong>3</strong></td>
+                  <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                      <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-3_cexmhn.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="align-middle"><strong>$79.00</strong></td>
+                  <td class="align-middle"><strong>3</strong></td>
+                  <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                      <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-2_qxjis2.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+                      </div>
+                    </div>
+                    <td class="align-middle"><strong>$79.00</strong></td>
+                    <td class="align-middle"><strong>3</strong></td>
+                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End -->
+        </div>
+      </div>
+
+      <div class="row py-5 p-4 bg-white rounded shadow-sm">
+        
+        <div class="col-lg-12">
+          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+          <div class="p-4">
+            <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                <h5 class="font-weight-bold">$400.00</h5>
+              </li>
+            </ul><a href="final.html" class="btn btn-dark rounded-pill py-2 btn-block" onmouseover="this.style.background:green">Procceed to checkout</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Product Container Ends Here -->
+
+
+
+
+
+
+
+
+
+
+<!--container.//-->
+
+<!-- footer starts here-->
+<footer class="footer-distributed">
+
+    <div class="footer-left ">
+      
+      <div class="logo ">
+          <img src="asset/images/PSW.png">
+      </div>
+    </div>
+
+    <div class="footer-center">
+      
+      <div>
+          <i class="fas fa-map-marker"></i>
+          <p><span>Patan Multiple Campus</span> PatanDhoka,Lalitpur</p>
+      </div>
+
+      <div>
+          <i class="fas fa-phone"></i>
+          <p>9876543210</p>
+      </div>
+
+
+      <div>
+          <i class="fas fa-envelope"></i>
+          <p><a href="pustaksewa.com">support@pustaksewa.com</a></p>
+      </div>
+
+
+    </div>
+
+    <div class="footer-right">
+      
+      <p class="footer-company-about">
+          <span>About the company</span>
+          Buy,Sell,Donate both Old Books and New Books | Start the Trend
+      </p>
+
+      <div class="footer-icons">
+
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+
+      </div>
+
+    </div>  
+  </footer>
+  <!-- footer end -->
+
+  <!-- Script HERE -->
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="asset/js/jquery-3.2.1.slim.min.js" ></script>
+    <script src="asset/js/popper.min.js" ></script>
+    <script src="asset/js/bootstrap.min.js" ></script>
+   
+    <!-- /*--------------- Custom JavaScript --------------------*/ -->
+
+    <script type="text/javascript">      
+     // --------------JS for menu scroll------------
+    // Navbar Scrollblack 
+      $(window).on('scroll',function()
+      {
+        if ($(window).scrollTop())
+        {
+              $('nav').addClass('snav');//navigation Bar
+              $('nav a').addClass('snava');
+              document.getElementById('logo').src='asset/images/PSWS.png'//Items 
+
+          }
+          else
+          {
+              $('nav').removeClass('snav');
+              $('nav a').removeClass('snava');
+              document.getElementById('logo').src='asset/images/PSL.png'
+          }
+      })
+        
+    // Navbar Scrollblack//
+    </script>
+
+@yield('script')
+      <!-- Script Ends HERE -->
+
+</body>
+</html>
+
