@@ -38,4 +38,15 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function category()
+    {
+        return $this->hasMany('App\Category');
+    }
+
+     public function product()
+    {
+        return $this->hasMany('App/Products');
+    }
+
 }

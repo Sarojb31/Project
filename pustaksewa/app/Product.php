@@ -18,4 +18,9 @@ protected $table = "products";
     {
     	return $this->belongsto('App\User','added_by','id');
     }
+
+    public function admin()
+    {
+    	return $this->belongsto('App\Admin');
+    }
 }

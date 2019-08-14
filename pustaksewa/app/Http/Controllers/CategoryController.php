@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use App\Category;
 use Illuminate\Http\Request;
+use Auth;
 
 
 class CategoryController extends Controller
@@ -32,7 +33,8 @@ class CategoryController extends Controller
 		 $category = new Category();
         $category->category_title = $request->title;
         $category->category_summary = $request->summary;
-        $category->added_by = \Auth::user()->id;
+        $category->added_by = Auth::user()->name;
+        // dd(Auth::user()->id);
          if (($request->category_image != null)) {
             $path = $request->file('category_image')->store('category', 'public');
         }

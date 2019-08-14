@@ -30,15 +30,15 @@ class ProductController extends Controller
 	 public function addProduct(Request $request){
        // dd($request->all());
 
-   //  	$request->validate([
-   //  		'product_name' => 'required|max:50',
-   //  		'price' => 'required',
-			// 'quantity' => 'required',
-   //  		'discount' => 'nullable',
-   //  		'description' => 'required',
-   //  		'category' => 'required',
-   //  		'product_image' => 'required|mimes:jpg,png,jpeg',
-   //  	]);
+    	$request->validate([
+    		'title' => 'required|max:50',
+    		'price' => 'required',
+			'quantity' => 'required',
+    		'discount' => 'nullable',
+    		'description' => 'required',
+    		'category' => 'required',
+    		'product_image' => 'required|mimes:jpg,png,jpeg',
+    	]);
 
 
     	$product = new Product();

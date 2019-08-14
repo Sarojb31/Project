@@ -19,6 +19,15 @@
 @endsection
 
 @section('content')
+ @if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+    @endif
     <div class="row">
         <div class="white-box">
             <form class="form-horizontal" enctype="multipart/form-data" action="{{route('admin.product.add')}}" method="post">

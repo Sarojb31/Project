@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Admin;
+use App\Product;
+use App\Category;
+use App\User;
+use App\Donation;
 
 class AdminController extends Controller
 {
    public function index(){
 
-   	return view('BackEnd.admin');
+   	$count['counterP']=Product::count();
+   	$count['counterU']=User::count();
+
+
+   	 return view("BackEnd.admin.dashboard",$count);
    }
 
    public function showadminslist(){
@@ -21,4 +29,6 @@ class AdminController extends Controller
 //        $user = User::all();
 //        return view("user.list")->with('user',$user);
     }
+
+
 }
