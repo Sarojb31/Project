@@ -20,7 +20,7 @@
                             <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{{asset('public/BackEnd_assets/images/user-img.png')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{Auth::guard('admin')->user()->name}}</b><span class="caret"></span> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{{asset('public/BackEnd_assets/images/user-img.png')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{Auth::guard()->user()->name}}</b><span class="caret"></span> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
                             <li>
                                 <div class="dw-user-box">

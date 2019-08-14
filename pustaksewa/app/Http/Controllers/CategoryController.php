@@ -33,7 +33,7 @@ class CategoryController extends Controller
 		 $category = new Category();
         $category->category_title = $request->title;
         $category->category_summary = $request->summary;
-        $category->added_by = Auth::user()->name;
+        $category->added_by = Auth::guard('admin')->user()->name;
         // dd(Auth::user()->id);
          if (($request->category_image != null)) {
             $path = $request->file('category_image')->store('category', 'public');

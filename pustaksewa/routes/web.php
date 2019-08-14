@@ -11,13 +11,12 @@
 |
 */ 
 /*==================================FrontEnd Routes COllection==========================*/ 
-Route::get('/', function () {
-    return view('FrontEnd.index');
-});
+
 
 Auth::routes();
 
 	Route::get('/', 'HomeController@index')->name('home');
+
 	Route::get('/shop', 'HomeController@shop')->name('shop');
 	Route::get('/about', 'HomeController@about')->name('about');
 	Route::get('/contact', 'HomeController@contact')->name('contact');

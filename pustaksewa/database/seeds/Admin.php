@@ -11,19 +11,19 @@ class Admin extends Seeder
      */
     public function run()
     {
-         DB::table('admin')->insert([
+         DB::table('admins')->insert([
             'name' => 'test',
             'email' => 'test1@gmail.com',
             'password' => bcrypt('password'),
             'contact_number' => 9873737
         ]);
-         DB::table('admin')->insert([
+         DB::table('admins')->insert([
             'name' => 'test',
             'email' => 'te8st@gmail.com',
             'password' => bcrypt('password'),
             'contact_number' => 9873737
         ]);
-         DB::table('admin')->insert([
+         DB::table('admins')->insert([
             'name' => 'test',
             'email' => 'te7st@gmail.com',
             'password' => bcrypt('password'),
