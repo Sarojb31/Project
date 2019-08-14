@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Category;
 use App\User;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -48,7 +49,7 @@ class ProductController extends Controller
     	$product->quantity = $request->quantity;
     	$product->discount = $request->discount;
     	$product->description = htmlentities($request->description);
-    	$product->added_by = \Auth::user()->id;
+    	$product->added_by = Auth::user()->name;
 
     	$product->cat_id = $request->category;
     

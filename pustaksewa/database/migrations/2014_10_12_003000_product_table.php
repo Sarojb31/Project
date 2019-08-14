@@ -22,7 +22,7 @@ class ProductTable extends Migration
             $table->float('discount')->nullable();
             $table->bigInteger('cat_id')->unsigned();
             $table->text('product_image');
-            $table->integer('added_by');
+            $table->string('added_by');
 
             $table->timestamps();
 
