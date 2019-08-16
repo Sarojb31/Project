@@ -24,4 +24,9 @@ protected $table = "products";
     {
     	return $this->belongsto('App\Admin');
     }
+
+     public function order()
+    {
+        return $this->hasMany('App\Order');
+    }
 }

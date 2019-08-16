@@ -15,10 +15,9 @@ class OrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('product_id');
+            $table->bigInteger('product_id')->unsigned();
             $table->bigInteger('ordered_by')->unsigned();
             $table->integer('quantity');
-            $table->integer('price');
 
             $table->foreign('ordered_by')
             ->references('id')

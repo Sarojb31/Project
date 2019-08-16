@@ -74,6 +74,9 @@ Route::group(['prefix'=>'admin','middleware' => ['auth:admin']], function () {
 	    Route::post('/category/edit',  'CategoryController@postEditCategory')->name('admin.store-category');
 	    Route::post('/category/delete/{id}','CategoryController@deleteCategory')->name('admin.delete-category');
 
+	    /*=============================Order====================================*/
+	    Route::get('/order','OrderController@orderlist')->name('admin.order');
+
 
 
 
